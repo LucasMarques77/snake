@@ -12,6 +12,7 @@ const pointEq = p1 => p2 => p1.x == p2.x && p1.y == p2.y
 
 // Booleans
 const willEat   = state => pointEq(nextHead(state))(state.apple)
+const willEat2   = state => pointEq(nextHead(state))(state.mouse)
 const willCrash = state => state.snake.find(pointEq(nextHead(state)))
 const validMove = move => state =>
   state.moves[0].x + move.x != 0 || state.moves[0].y + move.y != 0
@@ -19,6 +20,7 @@ const validMove = move => state =>
 // Next values based on state
 const nextMoves = state => state.moves.length > 1 ? dropFirst(state.moves) : state.moves
 const nextApple = state => willEat(state) ? rndPos(state) : state.apple
+const nextmouse = state => willEat2(state) ? rndPos(state) : state.mouse
 const nextHead  = state => state.snake.length == 0
   ? { x: 2, y: 2 }
   : {
@@ -44,6 +46,7 @@ const initialState = () => ({
   moves: [EAST],
   snake: [],
   apple: { x: 16, y: 2 },
+  mouse: { x: 10, y: 3 },
 })
 
 const next = spec({
@@ -51,7 +54,8 @@ const next = spec({
   cols:  prop('cols'),
   moves: nextMoves,
   snake: nextSnake,
-  apple: nextApple
+  apple: nextApple,
+  mouse: nextmouse
 })
 
 const enqueue = (state, move) => validMove(move)(state)
