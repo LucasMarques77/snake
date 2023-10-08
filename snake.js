@@ -1,6 +1,7 @@
 const base = require('./base')
 Object.getOwnPropertyNames(base).map(p => global[p] = base[p])
 
+
 // Constants
 const NORTH = { x: 0, y:-1 }
 const SOUTH = { x: 0, y: 1 }
