@@ -177,6 +177,8 @@ const rndPos = table => ({
   x: rnd(0)(table.cols - 1),
   y: rnd(0)(table.rows - 1)
 })
+
+// score
 const nextScore = state => {
   if (state.snake.length == 0) {
     return 0
@@ -189,6 +191,7 @@ const nextScore = state => {
   }
 }
 
+//pause
 const nextPause = state => {
   if (state.snake.length == 0) {
     return true
