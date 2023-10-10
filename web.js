@@ -15,7 +15,7 @@ const draw = () => {
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
   // draw snake
-  ctx.fillStyle = 'rgb(0,200,50)'
+  ctx.fillStyle = '#0d701e'
   state.snake.map(p => ctx.fillRect(x(p.x), y(p.y), x(1), y(1)))
 
   // draw apples
