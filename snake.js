@@ -241,8 +241,10 @@ const next = spec({
   
 })
 
-const enqueue = (state, move) => validMove(move)(state)
-  ? merge(state)({ moves: state.moves.concat([move]) })
-  : state
-
-module.exports = { EAST, NORTH, SOUTH, WEST, initialState, enqueue, next, }
+const enqueue = (state, move) => {
+  if (validMove(move)(state) & state.moves.length < 3) {
+    return merge(state)({ moves: state.moves.concat([move]) }) }
+  else {
+    return state }
+  }
+module.exports = { EAST, NORTH, SOUTH, WEST, NONE, initialState, enqueue, next, willCrash, willEatMouse, nextHead, dropLast, willEat, reset2 }
