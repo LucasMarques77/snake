@@ -19,8 +19,17 @@ const draw = () => {
   state.snake.map(p => ctx.fillRect(x(p.x), y(p.y), x(1), y(1)))
 
   // draw apples
-  ctx.fillStyle = 'rgb(255,50,0)'
+  ctx.fillStyle = '#c20619'
   ctx.fillRect(x(state.apple.x), y(state.apple.y), x(1), y(1))
+  ctx.fillRect(x(state.apple2.x), y(state.apple2.y), x(1), y(1))
+  ctx.fillRect(x(state.apple3.x), y(state.apple3.y), x(1), y(1))
+  ctx.fillRect(x(state.apple4.x), y(state.apple4.y), x(1), y(1))
+  ctx.fillRect(x(state.apple5.x), y(state.apple5.y), x(1), y(1))
+  ctx.fillRect(x(state.apple6.x), y(state.apple6.y), x(1), y(1))
+  ctx.fillRect(x(state.apple7.x), y(state.apple7.y), x(1), y(1))
+  ctx.fillRect(x(state.apple8.x), y(state.apple8.y), x(1), y(1))
+  ctx.fillRect(x(state.apple9.x), y(state.apple9.y), x(1), y(1))
+  ctx.fillRect(x(state.apple10.x), y(state.apple10.y), x(1), y(1))
 
   // add crash
   if (state.snake.length == 0) {
