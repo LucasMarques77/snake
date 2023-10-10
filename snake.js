@@ -224,9 +224,21 @@ const next = spec({
   rows:  prop('rows'),
   cols:  prop('cols'),
   moves: nextMoves,
-  snake: nextSnake,
+  snake: nextSnake2,
   apple: nextApple,
-  mouse: nextMouse
+  apple2: nextApple2,
+  apple3: nextApple3,
+  apple4: nextApple4,
+  apple5: nextApple5,
+  apple6: nextApple6,
+  apple7: nextApple7,
+  apple8: nextApple8,
+  apple9: nextApple9,
+  apple10: nextApple10,
+  mouse: nextMouse,
+  score: nextScore,
+  pause: nextPause,
+  
 })
 
 const enqueue = (state, move) => validMove(move)(state)
