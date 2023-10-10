@@ -59,6 +59,69 @@ const nextApple3 = state => {
     return state.apple3;
   }
 }
+const nextApple4 = state => {
+  if (willEat4(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple4;
+  }
+}
+const nextApple5 = state => {
+  if (willEat5(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple5;
+  }
+}
+const nextApple6 = state => {
+  if (willEat6(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple6;
+  }
+}
+const nextApple7 = state => {
+  if (willEat7(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple7;
+  }
+}
+const nextApple8 = state => {
+  if (willEat8(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple8;
+  }
+}
+const nextApple9 = state => {
+  if (willEat9(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple9;
+  }
+}
+const nextApple10 = state => {
+  if (willEat10(state)) {
+    return rndPos(state);
+  } else if (willEatMouse(state)){
+    return rndPos(state);
+  } else {
+    return state.apple10;
+  }
+}
 const nextMouse = state => willEatMouse(state) ? rndPos(state) : state.mouse
 const nextHead  = state => state.snake.length == 0
   ? { x: 2, y: 2 }
