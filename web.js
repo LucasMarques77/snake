@@ -31,11 +31,18 @@ const draw = () => {
   ctx.fillRect(x(state.apple9.x), y(state.apple9.y), x(1), y(1))
   ctx.fillRect(x(state.apple10.x), y(state.apple10.y), x(1), y(1))
 
+// draw mouse
+ctx.fillStyle = '#5f615f'
+ctx.fillRect(x(state.mouse.x), y(state.mouse.y), x(1), y(1))
+
   // add crash
   if (state.snake.length == 0) {
     ctx.fillStyle = 'rgb(255,0,0)'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
   }
+  
+// edits the score value in HTML
+  document.getElementById('score').innerHTML = state.score
 }
 
 // Game loop update
