@@ -129,11 +129,48 @@ const nextHead  = state => state.snake.length == 0
     x: mod(state.cols)(state.snake[0].x + state.moves[0].x),
     y: mod(state.rows)(state.snake[0].y + state.moves[0].y)
   }
-const nextSnake = state => willCrash(state)
-  ? []
-  : (willEat(state)
-    ? [nextHead(state)].concat(state.snake)
-    : [nextHead(state)].concat(dropLast(state.snake)))
+
+const nextSnake2 = state => {
+  if (willCrash(state)) {
+    return[];
+  } else {
+    if (willEatMouse(state)) {
+      return [nextHead(state)].concat(state.snake);
+    } else if (willEat(state)) {
+
+      return []
+    } else if (willEat2(state)) {
+
+      return []
+    } else if (willEat3(state)) {
+
+      return []
+    } else if (willEat4(state)) {
+
+      return [] 
+    } else if (willEat5(state)) {
+
+      return []
+    } else if (willEat6(state)) {
+
+      return []
+    } else if (willEat7(state)) {
+
+      return []
+    } else if (willEat8(state)) {
+
+      return []
+    } else if (willEat9(state)) {
+
+      return []
+    } else if (willEat10(state)) {
+
+      return [] 
+    } else {
+      return [nextHead(state)].concat(dropLast(state.snake));
+    }
+  }
+}
 
 // Randomness
 const rndPos = table => ({
