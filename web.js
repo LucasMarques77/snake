@@ -10,8 +10,8 @@ const y = r => Math.round(r * canvas.height / state.rows)
 
 // Game loop draw
 const draw = () => {
-  // clear
-  ctx.fillStyle = '#232323'
+  // background
+  ctx.fillStyle = '#182b1b'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
   // draw snake
