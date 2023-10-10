@@ -199,15 +199,25 @@ const nextPause = state => {
   else
     return state.pause
 }
-
 // Initial state
 const initialState = () => ({
   cols:  20,
   rows:  14,
-  moves: [EAST],
+  moves: [NONE],
   snake: [],
   apple: { x: 16, y: 2 },
+  apple2: { x: 2, y: 8 },
+  apple3: { x: 6, y: 7 },
+  apple4: { x: 10, y: 10 },
+  apple5: { x: 8, y: 4 },
+  apple6: { x: 14, y: 6 },
+  apple7: { x: 9, y: 12 },
+  apple8: { x: 11, y: 1 },
+  apple9: { x: 17, y: 5 },
+  apple10: { x: 1, y: 13 },
   mouse: { x: 10, y: 3 },
+  score: 0,
+  pause: false,
 })
 
 const next = spec({
