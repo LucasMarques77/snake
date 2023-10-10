@@ -59,12 +59,19 @@ const step = t1 => t2 => {
 // Key events
 window.addEventListener('keydown', e => {
   switch (e.key) {
-    case 'w': case 'h': case 'ArrowUp':    state = enqueue(state, NORTH); break
-    case 'a': case 'j': case 'ArrowLeft':  state = enqueue(state, WEST);  break
-    case 's': case 'k': case 'ArrowDown':  state = enqueue(state, SOUTH); break
-    case 'd': case 'l': case 'ArrowRight': state = enqueue(state, EAST);  break
+    case 'w': case 'h': case 'ArrowUp':    state = enqueue(state, NORTH); state.pause = false; vanish(); break
+    case 'a': case 'j': case 'ArrowLeft':  state = enqueue(state, WEST);  state.pause = false; vanish(); break
+    case 's': case 'k': case 'ArrowDown':  state = enqueue(state, SOUTH); state.pause = false; vanish(); break
+    case 'd': case 'l': case 'ArrowRight': state = enqueue(state, EAST);  state.pause = false; vanish(); break
+    case 'g':  state = enqueue(state, NONE); vanish(); break
+    case 'v': state.pause = !state.pause; break
   }
 })
+//vanish makes h1 and h4 in html just gone
+function vanish() {
+  document.getElementById('tit1').innerHTML = ''
+  document.getElementById('tit2').innerHTML = ''
+}
 
 // Main
 draw(); window.requestAnimationFrame(step(0))
