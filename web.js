@@ -47,7 +47,10 @@ ctx.fillRect(x(state.mouse.x), y(state.mouse.y), x(1), y(1))
 
 // Game loop update
 const step = t1 => t2 => {
-  if (t2 - t1 > 100) {
+  if (state.pause) {
+    window.requestAnimationFrame(step(t1))
+  }
+  else if (t2 - t1 > 150) {
     state = next(state)
     draw()
     window.requestAnimationFrame(step(t2))
@@ -55,7 +58,6 @@ const step = t1 => t2 => {
     window.requestAnimationFrame(step(t1))
   }
 }
-
 // Key events
 window.addEventListener('keydown', e => {
   switch (e.key) {
