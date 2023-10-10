@@ -189,6 +189,14 @@ const nextScore = state => {
   }
 }
 
+const nextPause = state => {
+  if (state.snake.length == 0) {
+    return true
+  }
+  else
+    return state.pause
+}
+
 // Initial state
 const initialState = () => ({
   cols:  20,
