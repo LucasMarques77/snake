@@ -177,6 +177,17 @@ const rndPos = table => ({
   x: rnd(0)(table.cols - 1),
   y: rnd(0)(table.rows - 1)
 })
+const nextScore = state => {
+  if (state.snake.length == 0) {
+    return 0
+  }
+  else if (willEatMouse(state)) {
+    return (state.score + 1)
+  }
+  else {
+    return state.score
+  }
+}
 
 // Initial state
 const initialState = () => ({
