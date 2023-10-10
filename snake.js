@@ -6,15 +6,28 @@ const NORTH = { x: 0, y:-1 }
 const SOUTH = { x: 0, y: 1 }
 const EAST  = { x: 1, y: 0 }
 const WEST  = { x:-1, y: 0 }
+const NONE  = { x: 0, y: 0 }
 
 // Point operations
 const pointEq = p1 => p2 => p1.x == p2.x && p1.y == p2.y
 
 // Booleans
 const willEat   = state => pointEq(nextHead(state))(state.apple)
+const willEat2   = state => pointEq(nextHead(state))(state.apple2)
+const willEat3   = state => pointEq(nextHead(state))(state.apple3)
+const willEat4   = state => pointEq(nextHead(state))(state.apple4)
+const willEat5  = state => pointEq(nextHead(state))(state.apple5)
+const willEat6  = state => pointEq(nextHead(state))(state.apple6)
+const willEat7   = state => pointEq(nextHead(state))(state.apple7)
+const willEat8  = state => pointEq(nextHead(state))(state.apple8)
+const willEat9 = state => pointEq(nextHead(state))(state.apple9)
+const willEat10   = state => pointEq(nextHead(state))(state.apple10)
+
 const willEatMouse   = state => pointEq(nextHead(state))(state.mouse)
+
 const willCrash = state => state.snake.find(pointEq(nextHead(state)))
-const validMove = move => state =>
+
+const validMove = move => state =>  
   state.moves[0].x + move.x != 0 || state.moves[0].y + move.y != 0
 
 // Next values based on state
