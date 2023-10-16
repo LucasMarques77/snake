@@ -190,7 +190,38 @@ const nextScore = state => {
     return state.score
   }
 }
-
+//game over function with boolean conditions to return a state for the game over screen
+const nextOver = state => {
+  if (state.snake.length == 0) {
+    return false
+  } else if (willEatMouse(state)) {
+    return false
+  } else if (willCrash(state)) {
+    return true
+  } else if (willEat(state)) {
+    return true
+  } else if (willEat2(state)) {
+    return true
+  } else if (willEat3(state)) {
+    return true
+  } else if (willEat4(state)) {
+    return true
+  } else if (willEat5(state)) {
+    return true
+  } else if (willEat6(state)) {
+    return true
+  } else if (willEat7(state)) {
+    return true
+  } else if (willEat8(state)) {
+    return true
+  } else if (willEat9(state)) {
+    return true
+  } else if (willEat10(state)) {
+    return true
+  } else {
+    return state.over
+  }
+}
 //pause
 const nextPause = state => {
   if (state.snake.length == 0) {
