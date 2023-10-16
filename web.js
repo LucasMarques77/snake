@@ -1,5 +1,9 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+const finalScore = document.getElementById('final-score')
+const menu = document.getElementById('menu')
+const buttonPlay = document.getElementById('btn-play')
+const canvascore = document.getElementById('canvascore')
 
 // Mutable state
 let state = initialState()
