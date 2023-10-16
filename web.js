@@ -54,6 +54,11 @@ const step = t1 => t2 => {
     state = next(state)
     draw()
     window.requestAnimationFrame(step(t2))
+  } else if (state.over) {
+    window.requestAnimationFrame(step(t1))
+    menu.style.display = "flex"
+    finalScore.innerText = score.innerText
+    canvascore.style.filter = "blur(20px)"
   } else {
     window.requestAnimationFrame(step(t1))
   }
@@ -61,12 +66,11 @@ const step = t1 => t2 => {
 // Key events
 window.addEventListener('keydown', e => {
   switch (e.key) {
-    case 'w': case 'h': case 'ArrowUp':    state = enqueue(state, NORTH); state.pause = false; vanish(); break
-    case 'a': case 'j': case 'ArrowLeft':  state = enqueue(state, WEST);  state.pause = false; vanish(); break
-    case 's': case 'k': case 'ArrowDown':  state = enqueue(state, SOUTH); state.pause = false; vanish(); break
-    case 'd': case 'l': case 'ArrowRight': state = enqueue(state, EAST);  state.pause = false; vanish(); break
-    case 'g':  state = enqueue(state, NONE); vanish(); break
-    case 'v': state.pause = !state.pause; break
+    case 'w': case 'h': case 'ArrowUp':    state = enqueue(state, NORTH); state.pause = false; clickbtn(); vanish(); break
+    case 'a': case 'j': case 'ArrowLeft':  state = enqueue(state, WEST);  state.pause = false; clickbtn(); vanish(); break
+    case 's': case 'k': case 'ArrowDown':  state = enqueue(state, SOUTH); state.pause = false; clickbtn(); vanish(); break
+    case 'd': case 'l': case 'ArrowRight': state = enqueue(state, EAST);  state.pause = false; clickbtn(); vanish(); break
+    case 'p': state.pause = !state.pause; clickbtn(); vanish(); break
   }
 })
 //vanish makes h1 and h4 in html just gone
