@@ -238,6 +238,7 @@ const next = spec({
   mouse: nextMouse,
   score: nextScore,
   pause: nextPause,
+  over: nextOver
   
 })
 
