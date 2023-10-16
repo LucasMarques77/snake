@@ -73,6 +73,12 @@ window.addEventListener('keydown', e => {
     case 'p': state.pause = !state.pause; clickbtn(); vanish(); break
   }
 })
+//function for html button making the game over screen disappear
+const clickbtn = () => {
+  menu.style.display = "none"
+  canvascore.style.filter = "none"
+}
+
 //vanish makes h1 and h4 in html just gone
 function vanish() {
   document.getElementById('tit1').innerHTML = ''
