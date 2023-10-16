@@ -2,16 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Apple Maze</title>
-    <link rel="stylesheet" href="web.css">
+    <title>Black Mamba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>require=()=>({}); module={}; module.exports=()=>({})</script>
   </head>
   <body>
-  <div>
-    <span id="score">0</span>
-    <canvas id="canvas" width="700" height="500"></canvas>
-  </div>
-  <h1 id="tit1" style="position: absolute; top:10%">Press WASD or arrows <h4 id="tit2" style="position: absolute; top: 20%;">g to go back on initial position</h4></h1>
+    <div id="canvascore">
+      <span id="score">0</span>
+      <canvas id="canvas" width="700" height="500"></canvas>
+    </div>
+    <div id="menu">
+
+    <span id="game-over"> GAME OVER</span>
+    <span id="final-score">0</span>points
+    <button id="btn-play" onclick="clickbtn()">
+      <span class="material-symbols-outlined" id="arrow-icon">
+        play_arrow
+      </span>
+      Play again
+    </button>
+    </div>
+    <h1 id="tit1">Press WASD or arrows</h1>
+    <h4 id="tit2">p to pause</h4>
     <script src="base.js"></script>
     <script src="snake.js"></script>
     <script src="web.js"></script>
