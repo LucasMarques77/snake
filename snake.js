@@ -234,7 +234,7 @@ const nextPause = state => {
 const initialState = () => ({
   cols:  20,
   rows:  14,
-  moves: [NONE],
+  moves: [EAST],
   snake: [],
   apple: { x: 16, y: 2 },
   apple2: { x: 2, y: 8 },
