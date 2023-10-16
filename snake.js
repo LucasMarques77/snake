@@ -218,6 +218,7 @@ const initialState = () => ({
   mouse: { x: 10, y: 3 },
   score: 0,
   pause: false,
+  over: false
 })
 
 const next = spec({
